@@ -15,7 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
+from machinelearning.apps.mlr import views as mlr_views 
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    # path("mlr/", include('machinelearning.apps.mlr.urls')),
+    path("", views.index, name="index"),
+    # multiple linear regression
+    path("dashboard", mlr_views.dashboard, name="dashboard"),
+    path("multiple", mlr_views.multiple, name="multiple"),
+    path("process", mlr_views.process, name="process"),
+    path("update", mlr_views.update, name="update"),
+    path("cpo", mlr_views.cpo, name="cpo"),
+    path("kpo", mlr_views.kpo, name="kpo"),
+
+    
+    
+    #path("accounts/profile", views.ProfileView.as_view(), name="profile"),
+    # Django Auth
+    path(
+        "accounts/login",
+        auth_views.LoginView.as_view(template_name="accounts/login.html"),
+        name="login",
+    ),
+    path("accounts/logout", auth_views.LogoutView.as_view(), name="logout"),
 ]

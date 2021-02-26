@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Machine Learning | Devnesia.id
+{% endblock title %}
+    
+    
+
+{% block header %}
+   <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1 class="text-light"><a href="#"><span>MLearn</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li class="get-started"><a href="dashboard">Back</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+{% endblock header %}
+  
+
+
+{% block content %}
+<!-- ======= Multiples Section ======= -->
+<section id="multiple" class="multiple" style="padding-top: 100px;">
+    <div class="container">
+
+        {% if  %}
+        <div class="alert alert-success">
+          <strong>Success!</strong>xx
+        </div>
+        {% endif %}
+
+      <div class="section-title" data-aos="fade-down">
+        <h2>Multiple Linear Regression</h2>
+      </div>
+
+      <div class="row">
+
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4" data-aos="fade-up" data-aos-delay="300"> 
+          <form method="POST" class="justify-content-center" action="process">
+             {% csrf_token %}
+
+                <div class="form-group row mt-2" data-aos="zoom-in" data-aos-delay="150">
+                  <label class="col-md-1  col-form-label"><b>X1</b></label>
+                <div class="col-md-11">
+                  <input type="text" class="form-control" name="X1" value="" placeholder="Luas Lahan" required>
+                </div> 
+              </div>
+
+              <div class="form-group row mt-2" data-aos="zoom-in" data-aos-delay="300">
+                  <label class="col-md-1  col-form-label"><b>X2</b></label>
+                <div class="col-md-11">
+                  <input type="text" class="form-control" name="X2" value="" placeholder="Jumlah Pokok" required>
+                </div> 
+              </div>
+
+              <div class="form-group row mt-2" data-aos="zoom-in" data-aos-delay="450">
+                  <label class="col-md-1  col-form-label"><b>X3</b></label>
+                <div class="col-md-11">
+                  <input type="text" class="form-control" name="X3" value="" placeholder="Jumlah TBS" required>
+                </div> 
+              </div>
+
+              <div class="form-group row mt-2" data-aos="zoom-in" data-aos-delay="600">
+                  <label class="col-md-1  col-form-label"><b>X4</b></label>
+                <div class="col-md-11">
+                  <input type="text" class="form-control" name="X4" value="" placeholder="Umur" required>
+                </div> 
+              </div>
+             <!-- <div class="form-group mt-2" data-aos="fade-up" data-aos-delay="750">
+                {{data_form.X5}}
+              </div>
+             <div class="form-group mt-2" data-aos="fade-up" data-aos-delay="900">
+                {{data_form.X6}}
+              </div> -->
+             <div class="form-group" data-aos="fade-up" data-aos-delay="1000">
+              <button style="border-radius: 22.5px; padding: 8px 25px;" class="btn btn-secondary mt-3 btn-lg"  type="submit">Process</button>
+              </div>         
+            </form>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Multiples Section -->
+{% endblock content %}
+
+
+{% block footer %}
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6 text-lg-left text-center">
+            <div class="copyright">
+              &copy; Copyright <strong>MLearn</strong>. All Rights Reserved
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+              <a href="#intro" class="scrollto">Home</a>
+              <a href="admin/" class="scrollto">Dataset</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+{% endblock footer %}
+  
+
+    
+    
